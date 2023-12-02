@@ -15,4 +15,16 @@
     <ProjectReference Include="..\Vegan.Tests\Vegan.Tests.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="DTO\builder\" />
+    <Folder Include="Exceptions\constraints\" />
+    <Folder Include="http\" />
+    <Folder Include="Repositories\Fornecedores\" />
+    <Folder Include="Repositories\Unit of Work\" />
+    <Folder Include="Repositories\Restaurantes\" />
+    <Folder Include="Repositories\Produtos\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
