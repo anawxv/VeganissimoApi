@@ -9,20 +9,20 @@ namespace Vegan.api.DTO.builder
     {
         private FornecedorDTO _fornecedorDto = new FornecedorDTO();
 
-        public FornecedorDtoBuilder WithId(int idfornecedor)
+        public FornecedorDTOBuilder WithIdFornecedor(int idfornecedor)
         {
             _fornecedorDto.IdFornecedor = idfornecedor;
             return this;
         }
 
-        public FornecedorDtoBuilder WithNome(string nome)
+        public FornecedorDTOBuilder WithNome(string nome)
         {
             _fornecedorDto.Nome = nome;
             return this;
         }
 
 
-        public FornecedorDtoBuilder WithNrdocumento(int nrdocumento)
+        public FornecedorDTOBuilder WithNrdocumento(int nrdocumento)
         {
             _fornecedorDto.Nrdocumento = nrdocumento;
             return this;
@@ -34,7 +34,7 @@ namespace Vegan.api.DTO.builder
             return this;
         }
 
-        public FornecedorDtoBuilder WithPhone(string phone)
+        public FornecedorDTOBuilder WithPhone(string phone)
         {
             _fornecedorDto.Phone = phone;
             return this;

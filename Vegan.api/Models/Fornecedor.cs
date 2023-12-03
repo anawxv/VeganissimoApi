@@ -3,12 +3,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Vegan.api.DTO;
+using Vegan.api.DTO.builder;
+using System.Xml.Linq;
+
 
 
 
 namespace Vegan.api.Models
 {
-    [Index(nameof(Email), IsUnique = true)]
+    [Microsoft.EntityFrameworkCore.IndexAttribute(nameof(Email), IsUnique = true)]
     [PrimaryKey(nameof(IdFornecedor))]
     [Table("fornecedor")]
     public class Fornecedor
@@ -30,7 +34,7 @@ namespace Vegan.api.Models
         [Column("nrdocumento")]
         [NotNull]
         [Comment("Fornecedor nrdocumento")]
-        public int Nrdocumento {get; set;} = null;
+        public int Nrdocumento;
 
         [Required]
         [Column("email")]
@@ -47,6 +51,66 @@ namespace Vegan.api.Models
         [StringLength(20)]
         [AllowNull]
         public string Phone { get; set; }
+
+        public override bool Equals(object? obj)
+        {
+            return base.Equals(obj);
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public Fornecedor()
+        { }
+
+        public Fornecedor(string nome)
+        {
+            Nome = nome;
+        }
+
+        public Fornecedor(string nome, string email)
+        {
+            Nome = nome;
+            Email = email;
+        }
+
+        public Fornecedor(string nome, string email, string phone)
+        {
+            Nome = nome;
+            Email = email;
+            Phone = phone;
+        }
+
+        public Fornecedor(int nrdocumento, string nome, string email, string phone)
+        {
+            Nrdocumento = nrdocumento;
+            Nome = nome;
+            Email = email;
+            Phone = phone;
+        }
+
+
+        public Fornecedor(int idfornecedor, int nrdocumento, string nome, string email, string phone)
+        {
+            IdFornecedor = idfornecedor;
+            Nrdocumento = nrdocumento;
+            Nome = nome;
+            Email = email;
+            Phone = phone;
+        }
+
+        public FornecedorDTO ToFornecedor()
+        {
+            FornecedorDTO fornecedorDto = new FornecedorDTOBuilder()
+                    .WithIdFornecedor(IdFornecedor)
+                    .WithNrdocumento(Nrdocumento)
+                    .WithNome(Nome)
+                    .WithEmail(Email)
+                    .WithPhone(Phone)
+                    .Build();
+            return fornecedorDto;
+        }
 
     }
 }
