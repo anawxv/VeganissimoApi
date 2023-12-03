@@ -14,7 +14,17 @@ namespace Vegan.api.DTO.builder
             _fornecedorDto.IdFornecedor = idfornecedor;
             return this;
         }
+        public FornecedorDTOBuilder WithIdProd(int idprod)
+        {
+            _fornecedorDto.IdProd = idprod;
+            return this;
+        }
 
+        public FornecedorDTOBuilder WithIdRes(int idres)
+        {
+            _fornecedorDto.IdRes = idres;
+            return this;
+        }
         public FornecedorDTOBuilder WithNome(string nome)
         {
             _fornecedorDto.Nome = nome;

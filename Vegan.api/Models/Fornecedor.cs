@@ -12,7 +12,7 @@ using System.Xml.Linq;
 
 namespace Vegan.api.Models
 {
-    [Microsoft.EntityFrameworkCore.IndexAttribute(nameof(Email), IsUnique = true)]
+    //[Microsoft.EntityFrameworkCore.IndexAttribute(nameof(Email), IsUnique = true)]
     [PrimaryKey(nameof(IdFornecedor))]
     [Table("fornecedor")]
     public class Fornecedor
@@ -22,6 +22,16 @@ namespace Vegan.api.Models
         [Column("idfornecedor")]
         [Comment("Fornecedor IDFornecedor as a primary key")]
         public int IdFornecedor;
+
+        [ForeignKey("IdRes")]
+        public int IdRes { get; set; }
+        [NotMapped]
+        public Restaurante Restaurante { get; set; }
+
+        [ForeignKey("IdProd")]
+        public int IdProd { get; set; }
+        [NotMapped]
+        public Produto Produto { get; set; }
 
         [Required]
         [StringLength(60)]
@@ -35,6 +45,7 @@ namespace Vegan.api.Models
         [NotNull]
         [Comment("Fornecedor nrdocumento")]
         public int Nrdocumento;
+        internal readonly object Produtos;
 
         [Required]
         [Column("email")]
@@ -52,14 +63,14 @@ namespace Vegan.api.Models
         [AllowNull]
         public string Phone { get; set; }
 
-        public override bool Equals(object? obj)
+        /* public override bool Equals(object? obj)
         {
             return base.Equals(obj);
         }
         public override int GetHashCode()
         {
             return base.GetHashCode();
-        }
+        } */
 
         public Fornecedor()
         { }
@@ -93,6 +104,16 @@ namespace Vegan.api.Models
 
         public Fornecedor(int idfornecedor, int nrdocumento, string nome, string email, string phone)
         {
+            IdFornecedor = idfornecedor;
+            Nrdocumento = nrdocumento;
+            Nome = nome;
+            Email = email;
+            Phone = phone;
+        }
+        public Fornecedor(int idres, int idprod, int idfornecedor, int nrdocumento, string nome, string email, string phone)
+        {
+            IdRes = idres;
+            IdProd = idprod;
             IdFornecedor = idfornecedor;
             Nrdocumento = nrdocumento;
             Nome = nome;

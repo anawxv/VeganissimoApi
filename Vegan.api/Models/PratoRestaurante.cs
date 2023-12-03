@@ -11,7 +11,7 @@ using System.Xml.Linq;
 namespace Vegan.api.Models
 {
 
-    [Microsoft.EntityFrameworkCore.IndexAttribute(nameof(IdPrato), IsUnique = true)]
+    //[Microsoft.EntityFrameworkCore.IndexAttribute(nameof(IdPrato), IsUnique = true)]
     [PrimaryKey(nameof(IdPrato))]
     [Table("pratorestaurante")]
     public class PratoRestaurante
@@ -24,9 +24,9 @@ namespace Vegan.api.Models
         [Comment("Prato IDPrato as a primary key")]
         public int IdPrato;
 
-        [ForeignKey("IdRestaurante")]
+        [ForeignKey("IdRes")]
         public int IdRes { get; set; }
-        //[NotMapped]
+        [NotMapped]
         public Restaurante Restaurante { get; set; }
 
         [Required]

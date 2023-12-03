@@ -19,8 +19,6 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Exceptions\constraints\" />
-    <Folder Include="http\" />
     <Folder Include="Repositories\Fornecedores\" />
     <Folder Include="Repositories\Unit of Work\" />
     <Folder Include="Repositories\Restaurantes\" />

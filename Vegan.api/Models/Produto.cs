@@ -10,7 +10,7 @@ using System.Xml.Linq;
 
 namespace Vegan.api.Models
 {
-    [Microsoft.EntityFrameworkCore.IndexAttribute(nameof(IdProd), IsUnique = true)]
+    //[Microsoft.EntityFrameworkCore.IndexAttribute(nameof(IdProd), IsUnique = true)]
     [PrimaryKey(nameof(IdProd))]
     [Table("produto")]
     public class Produto
@@ -25,8 +25,8 @@ namespace Vegan.api.Models
 
         [ForeignKey("IdFornecedor")]
         public int IdFornecedor { get; set; }
-        //[NotMapped]
-        public Fornecedor Fornecedor { get; set; }
+        [NotMapped]
+        public Fornecedor? Fornecedor { get; set; }
 
         [Required]
         [StringLength(60)]
