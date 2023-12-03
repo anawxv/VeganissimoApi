@@ -46,6 +46,7 @@ namespace Vegan.api.Models
         [Comment("Preco do prato")]
         public int PrecoPrato { get; set; }
 
+
         public PratoRestaurante()
         { }
 

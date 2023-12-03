@@ -14,6 +14,6 @@ namespace Vegan.api.DTO
         public string NomeRes { get; set; }
         public string DescriaoRes { get; set; }
         public Fornecedor Fornecedor { get; set; }
-       public List<PratoRestauranteDTO> Restaurantes { get; set; } = new List<PratoRestauranteDTO>();
+       public List<PratoRestaurante> Restaurantes { get; set; } = new List<PratoRestaurante>();
     }
 }

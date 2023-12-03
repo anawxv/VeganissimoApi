@@ -20,6 +20,7 @@
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Repositories\Fornecedores\" />
+    <Folder Include="Repositories\PratosRestaurantes\" />
     <Folder Include="Repositories\Unit of Work\" />
     <Folder Include="Repositories\Restaurantes\" />
     <Folder Include="Repositories\Produtos\" />

@@ -15,12 +15,15 @@ namespace Vegan.api.Models
     public class Restaurante
     {
         public ICollection<Fornecedor>? Fornecedors { get; set; }
+        public ICollection<PratoRestaurante> PratoRestaurantes { get; set; }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("idres")]
         [Comment("Restaurante IDRestaurante as a primary key")]
         public int IdRes;
+
+        // internal object PratosRestaurantes;
 
         [ForeignKey("IdFornecedor")]
         public int IdFornecedor { get; set; }
@@ -38,6 +41,10 @@ namespace Vegan.api.Models
         [NotNull]
         [Comment("Descricao do restaurante")]
         public string DescricaoRes { get; set; } = null!;
+        public object PratosRestaurantes { get; internal set; }
+
+        // internal readonly object PratosRestaurantes;
+
         public Restaurante()
         { }
 

@@ -25,8 +25,8 @@ namespace Vegan.api.Models
 
         [ForeignKey("IdFornecedor")]
         public int IdFornecedor { get; set; }
-        [NotMapped]
-        public Fornecedor? Fornecedor { get; set; }
+        
+        public Fornecedor Fornecedor { get; set; }
 
         [Required]
         [StringLength(60)]

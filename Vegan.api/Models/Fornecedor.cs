@@ -17,21 +17,17 @@ namespace Vegan.api.Models
     [Table("fornecedor")]
     public class Fornecedor
     {
+
+        public ICollection<Produto>? Produtos { get; set; }
+        public ICollection<Restaurante> Restaurants { get; set;}
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("idfornecedor")]
         [Comment("Fornecedor IDFornecedor as a primary key")]
         public int IdFornecedor;
 
-        [ForeignKey("IdRes")]
-        public int IdRes { get; set; }
-        [NotMapped]
-        public Restaurante Restaurante { get; set; }
 
-        [ForeignKey("IdProd")]
-        public int IdProd { get; set; }
-        [NotMapped]
-        public Produto Produto { get; set; }
 
         [Required]
         [StringLength(60)]
@@ -45,7 +41,7 @@ namespace Vegan.api.Models
         [NotNull]
         [Comment("Fornecedor nrdocumento")]
         public int Nrdocumento;
-        internal readonly object Produtos;
+        internal readonly object Restaurantes;
 
         [Required]
         [Column("email")]
@@ -110,16 +106,7 @@ namespace Vegan.api.Models
             Email = email;
             Phone = phone;
         }
-        public Fornecedor(int idres, int idprod, int idfornecedor, int nrdocumento, string nome, string email, string phone)
-        {
-            IdRes = idres;
-            IdProd = idprod;
-            IdFornecedor = idfornecedor;
-            Nrdocumento = nrdocumento;
-            Nome = nome;
-            Email = email;
-            Phone = phone;
-        }
+
 
         public FornecedorDTO ToFornecedor()
         {

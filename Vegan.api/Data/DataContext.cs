@@ -21,23 +21,25 @@ namespace Vegan.api.Data
                 .HasKey(f => f.IdFornecedor);
 
             modelBuilder.Entity<Fornecedor>()
-                .HasMany(f => f.Produtos)
-                .WithOne(p => p.Fornecedor)
-                .HasForeignKey(p => p.IdFornecedor)
-                .OnDelete(DeleteBehavior.Cascade);
+        .HasMany(f => f.Produtos)
+        .WithOne(p => p.Fornecedor)
+        .HasForeignKey(p => p.IdFornecedor)
+        .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Fornecedor>()
-                .HasMany(f => f.Restaurante)
+                .HasMany(f => f.Restaurants)
                 .WithOne(r => r.Fornecedor)
                 .HasForeignKey(r => r.IdFornecedor)
                 .OnDelete(DeleteBehavior.Cascade);
+
+
 
             modelBuilder.Entity<PratoRestaurante>()
                 .HasKey(pr => pr.IdPrato);
 
             modelBuilder.Entity<PratoRestaurante>()
                 .HasOne(pr => pr.Restaurante)
-                .WithMany(r => r.PratosRestaurantes)
+                .WithMany(r => r.PratoRestaurantes)
                 .HasForeignKey(pr => pr.IdRes)
                 .OnDelete(DeleteBehavior.Cascade);
 
@@ -55,7 +57,7 @@ namespace Vegan.api.Data
 
             modelBuilder.Entity<Restaurante>()
                 .HasOne(r => r.Fornecedor)
-                .WithMany(f => f.Restaurante)
+                .WithMany(f => f.Restaurants)
                 .HasForeignKey(r => r.IdFornecedor)
                 .OnDelete(DeleteBehavior.Cascade);
 
@@ -65,5 +67,5 @@ namespace Vegan.api.Data
 }
     
 
-        }
+        
     
