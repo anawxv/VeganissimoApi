@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -19,11 +19,7 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Repositories\Fornecedores\" />
-    <Folder Include="Repositories\PratosRestaurantes\" />
     <Folder Include="Repositories\Unit of Work\" />
-    <Folder Include="Repositories\Restaurantes\" />
-    <Folder Include="Repositories\Produtos\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
