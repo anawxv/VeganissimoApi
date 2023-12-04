@@ -2,7 +2,7 @@
 
 namespace Vegan.api.Services.Fornecedores
 {
-    public interface IFornecedoresServices
+    public interface IFornecedoresService
     {
         public Task<IEnumerable<Fornecedor>> GetAllFornecedoresAsync();
         public Task<Fornecedor> GetFornecedorByIdAsync(int id);

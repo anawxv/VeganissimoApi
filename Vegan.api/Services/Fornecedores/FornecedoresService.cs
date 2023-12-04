@@ -12,7 +12,7 @@ using Vegan.api.Repositories.Fornecedores;
 
 namespace Vegan.api.Services.Fornecedores
 {
-    public class FornecedoresService : IFornecedoresServices
+    public class FornecedoresService : IFornecedoresService
     {
 
         private readonly IFornecedoresRepository _fornecedoresRepository;
