@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Vegan.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0c0f9c08485ef71bec13ef5d69076b4a50ce99c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Vegan.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Vegan.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
