@@ -21,6 +21,11 @@ namespace Vegan.api.Repositories.PratosRestaurantes
             return await _dataContext.PratoRestaurantes.FirstOrDefaultAsync(p => p.IdPrato == id);
         }
 
+        public async Task<PratoRestaurante> GetPratoByNomePratoAsync(string nome)
+        {
+            return await _dataContext.PratoRestaurantes.FirstOrDefaultAsync(p => p.NomePrato == nome);
+        }
+
         public async Task AddPratoAsync(PratoRestaurante pratorestaurante)
         {
             await _dataContext.PratoRestaurantes.AddAsync(pratorestaurante);

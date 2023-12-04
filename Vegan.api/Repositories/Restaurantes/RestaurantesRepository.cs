@@ -20,6 +20,10 @@ namespace Vegan.api.Repositories.Restaurantes
         {
             return await _dataContext.Restaurantes.FirstOrDefaultAsync(r => r.IdRes == id);
         }
+        public async Task<Restaurante> GetRestauranteByNomeResAsync(string nome)
+        {
+            return await _dataContext.Restaurantes.FirstOrDefaultAsync(r => r.NomeRes == nome);
+        }
 
         public async Task AddRestauranteAsync(Restaurante restaurante)
         {

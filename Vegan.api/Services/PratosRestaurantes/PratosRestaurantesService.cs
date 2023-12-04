@@ -36,15 +36,30 @@ namespace Vegan.api.Services.PratosRestaurantes
 
             return pratorestaurante;
         }
-        public async Task<PratoRestaurante> CreatePratoAsync(PratoRestaurante pratorestaurante)
+        public async Task<PratoRestaurante> GetPratoByNomePratoAsync(string nomePrato)
         {
-            PratoRestaurante pratorestauranteExists = await _pratosrestaurantesRepository.FindByNomePratoAsync(pratorestaurante.NomePrato);
+            PratoRestaurante pratorestaurante = await _pratosrestaurantesRepository.GetPratoByNomePratoAsync(nomePrato);
 
-            if (pratorestauranteExists != null && !pratorestauranteExists.Equals(pratorestaurante))
+            if (pratorestaurante is null)
             {
-                throw new BadRequestException("Prato já existe");
+                throw new NotFoundException("Prato");
             }
 
+            return pratorestaurante;
+        }
+
+        public async Task<PratoRestaurante> AddPratoAsync(PratoRestaurante pratorestaurante)
+        {
+            PratoRestaurante pratoExists = await _pratosrestaurantesRepository.GetPratoByNomePratoAsync(pratorestaurante.NomePrato);
+            if (pratoExists != null)
+            {
+                throw new Exception("Prato já existe.");
+            }
+
+            if (string.IsNullOrEmpty(pratorestaurante.NomePrato))
+            {
+                throw new Exception("O prato precisa de um nome.");
+            }
             await _pratosrestaurantesRepository.AddPratoAsync(pratorestaurante);
             await _unitOfWork.SaveChangesAsync();
             return pratorestaurante;
