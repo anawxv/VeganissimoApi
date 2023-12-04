@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Repositories\Unit of Work\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
