@@ -1,6 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Vegan.api.Models;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using Pomelo.EntityFrameworkCore.MySql.Storage;
+
 
 namespace Vegan.api.Data
 {
@@ -34,14 +37,29 @@ namespace Vegan.api.Data
 
 
 
-            modelBuilder.Entity<PratoRestaurante>()
-                .HasKey(pr => pr.IdPrato);
+            /* modelBuilder.Entity<PratoRestaurante>()
+                 .HasKey(pr => pr.IdPrato);
+
+             modelBuilder.Entity<PratoRestaurante>()
+                 .HasOne(pr => pr.Restaurante)
+                 .WithMany(r => r.PratoRestaurantes)
+                 .HasForeignKey(pr => pr.IdRes)
+                 .OnDelete(DeleteBehavior.Cascade); */
 
             modelBuilder.Entity<PratoRestaurante>()
-                .HasOne(pr => pr.Restaurante)
-                .WithMany(r => r.PratoRestaurantes)
+        .HasKey(pr => pr.IdPrato);
+
+            modelBuilder.Entity<PratoRestaurante>()
+                .HasOne(pr => pr.Restaurante) 
+                .WithMany(r => r.PratoRestaurantes)  
                 .HasForeignKey(pr => pr.IdRes)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            //modelBuilder.Entity<PratoRestaurante>()
+    //.Ignore(pr => pr.Restaurante);
+
+
+
 
             modelBuilder.Entity<Produto>()
                 .HasKey(p => p.IdProd);

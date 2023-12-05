@@ -98,3 +98,8 @@ C:\Users\ATIVABC\Desktop\vegan\vegan\Vegan.Tests\obj\Debug\net7.0\refint\Vegan.T
 C:\Users\ATIVABC\Desktop\vegan\vegan\Vegan.Tests\obj\Debug\net7.0\Vegan.Tests.pdb
 C:\Users\ATIVABC\Desktop\vegan\vegan\Vegan.Tests\obj\Debug\net7.0\Vegan.Tests.genruntimeconfig.cache
 C:\Users\ATIVABC\Desktop\vegan\vegan\Vegan.Tests\obj\Debug\net7.0\ref\Vegan.Tests.dll
+A:\veganissimo\Vegan.Tests\obj\Debug\net7.0\Vegan.Tests.csproj.AssemblyReference.cache
+A:\veganissimo\Vegan.Tests\obj\Debug\net7.0\Vegan.Tests.GeneratedMSBuildEditorConfig.editorconfig
+A:\veganissimo\Vegan.Tests\obj\Debug\net7.0\Vegan.Tests.AssemblyInfoInputs.cache
+A:\veganissimo\Vegan.Tests\obj\Debug\net7.0\Vegan.Tests.AssemblyInfo.cs
+A:\veganissimo\Vegan.Tests\obj\Debug\net7.0\Vegan.Tests.csproj.CoreCompileInputs.cache

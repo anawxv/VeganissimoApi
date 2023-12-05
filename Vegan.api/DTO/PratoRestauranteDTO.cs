@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using Vegan.api.Models;
@@ -13,6 +14,7 @@ namespace Vegan.api.DTO
         public string NomePrato { get; set; }
         public string DescricaoPrato { get; set; }
         public int PrecoPrato { get; set; }
+        [NotMapped]
         public Restaurante Restaurante { get; set; }
        
     }

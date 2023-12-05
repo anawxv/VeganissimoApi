@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ATIVABC\\Desktop\\vegan\\vegan\\Vegan.api\\Vegan.api.csproj": {}
+    "A:\\veganissimo\\Vegan.api\\Vegan.api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ATIVABC\\Desktop\\vegan\\vegan\\Vegan.api\\Vegan.api.csproj": {
+    "A:\\veganissimo\\Vegan.api\\Vegan.api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ATIVABC\\Desktop\\vegan\\vegan\\Vegan.api\\Vegan.api.csproj",
+        "projectUniqueName": "A:\\veganissimo\\Vegan.api\\Vegan.api.csproj",
         "projectName": "Vegan.api",
-        "projectPath": "C:\\Users\\ATIVABC\\Desktop\\vegan\\vegan\\Vegan.api\\Vegan.api.csproj",
-        "packagesPath": "C:\\Users\\ATIVABC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ATIVABC\\Desktop\\vegan\\vegan\\Vegan.api\\obj\\",
+        "projectPath": "A:\\veganissimo\\Vegan.api\\Vegan.api.csproj",
+        "packagesPath": "C:\\Users\\etechas\\.nuget\\packages\\",
+        "outputPath": "A:\\veganissimo\\Vegan.api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ATIVABC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\etechas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +26,16 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.305\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\ATIVABC\\Desktop\\vegan\\vegan\\Vegan.Tests\\Vegan.Tests.csproj": {
-                "projectPath": "C:\\Users\\ATIVABC\\Desktop\\vegan\\vegan\\Vegan.Tests\\Vegan.Tests.csproj"
+              "A:\\veganissimo\\Vegan.Tests\\Vegan.Tests.csproj": {
+                "projectPath": "A:\\veganissimo\\Vegan.Tests\\Vegan.Tests.csproj"
               }
             }
           }
@@ -56,6 +62,24 @@
               "target": "Package",
               "version": "[7.0.4, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "MySql.Data.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
@@ -80,21 +104,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\ATIVABC\\Desktop\\vegan\\vegan\\Vegan.Tests\\Vegan.Tests.csproj": {
+    "A:\\veganissimo\\Vegan.Tests\\Vegan.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ATIVABC\\Desktop\\vegan\\vegan\\Vegan.Tests\\Vegan.Tests.csproj",
+        "projectUniqueName": "A:\\veganissimo\\Vegan.Tests\\Vegan.Tests.csproj",
         "projectName": "Vegan.Tests",
-        "projectPath": "C:\\Users\\ATIVABC\\Desktop\\vegan\\vegan\\Vegan.Tests\\Vegan.Tests.csproj",
-        "packagesPath": "C:\\Users\\ATIVABC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ATIVABC\\Desktop\\vegan\\vegan\\Vegan.Tests\\obj\\",
+        "projectPath": "A:\\veganissimo\\Vegan.Tests\\Vegan.Tests.csproj",
+        "packagesPath": "C:\\Users\\etechas\\.nuget\\packages\\",
+        "outputPath": "A:\\veganissimo\\Vegan.Tests\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ATIVABC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\etechas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -102,6 +130,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -157,7 +186,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
         }
       }
     }
