@@ -16,7 +16,7 @@ namespace Vegan.api.Models
     [Table("pratorestaurante")]
     public class PratoRestaurante
     {
-        public ICollection<Restaurante>? Restaurantes { get; set; }
+        public ICollection<Restaurante> Restaurantes { get; set; }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

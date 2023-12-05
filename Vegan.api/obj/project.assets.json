@@ -156,7 +156,7 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "Microsoft.Data.SqlClient/5.0.1": {
+      "Microsoft.Data.SqlClient/5.0.2": {
         "type": "package",
         "dependencies": {
           "Azure.Identity": "1.6.0",
@@ -219,11 +219,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/7.0.4": {
+      "Microsoft.EntityFrameworkCore/7.0.10": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.4",
-          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.4",
+          "Microsoft.EntityFrameworkCore.Abstractions": "7.0.10",
+          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.10",
           "Microsoft.Extensions.Caching.Memory": "7.0.0",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
           "Microsoft.Extensions.Logging": "7.0.0"
@@ -242,7 +242,7 @@
           "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/7.0.4": {
+      "Microsoft.EntityFrameworkCore.Abstractions/7.0.10": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
@@ -255,7 +255,7 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/7.0.4": {
+      "Microsoft.EntityFrameworkCore.Analyzers/7.0.10": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/_._": {}
@@ -264,11 +264,11 @@
           "lib/netstandard2.0/_._": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Design/7.0.0": {
+      "Microsoft.EntityFrameworkCore.Design/7.0.10": {
         "type": "package",
         "dependencies": {
           "Humanizer.Core": "2.14.1",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.10",
           "Microsoft.Extensions.DependencyModel": "7.0.0",
           "Mono.TextTemplating": "2.2.1"
         },
@@ -286,10 +286,10 @@
           "build/net6.0/Microsoft.EntityFrameworkCore.Design.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/7.0.2": {
+      "Microsoft.EntityFrameworkCore.Relational/7.0.10": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "7.0.2",
+          "Microsoft.EntityFrameworkCore": "7.0.10",
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
         },
         "compile": {
@@ -303,11 +303,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/7.0.0": {
+      "Microsoft.EntityFrameworkCore.SqlServer/7.0.10": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Data.SqlClient": "5.0.1",
-          "Microsoft.EntityFrameworkCore.Relational": "7.0.0"
+          "Microsoft.Data.SqlClient": "5.0.2",
+          "Microsoft.EntityFrameworkCore.Relational": "7.0.10"
         },
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
@@ -3215,10 +3215,10 @@
         "version.txt"
       ]
     },
-    "Microsoft.Data.SqlClient/5.0.1": {
-      "sha512": "uu8dfrsx081cSbEevWuZAvqdmANDGJkbLBL2G3j0LAZxX1Oy8RCVAaC4Lcuak6jNicWP6CWvHqBTIEmQNSxQlw==",
+    "Microsoft.Data.SqlClient/5.0.2": {
+      "sha512": "mxcYU9I5TLzUegLVXiTtOE89RXN3GafL1Y+ExIbXvivvQtxplI4wxOgsiZGO4TZC18OJqui7mLVmiYpdFFImRQ==",
       "type": "package",
-      "path": "microsoft.data.sqlclient/5.0.1",
+      "path": "microsoft.data.sqlclient/5.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3245,7 +3245,7 @@
         "lib/netstandard2.1/Microsoft.Data.SqlClient.dll",
         "lib/netstandard2.1/Microsoft.Data.SqlClient.pdb",
         "lib/netstandard2.1/Microsoft.Data.SqlClient.xml",
-        "microsoft.data.sqlclient.5.0.1.nupkg.sha512",
+        "microsoft.data.sqlclient.5.0.2.nupkg.sha512",
         "microsoft.data.sqlclient.nuspec",
         "ref/net462/Microsoft.Data.SqlClient.dll",
         "ref/net462/Microsoft.Data.SqlClient.pdb",
@@ -3292,10 +3292,10 @@
         "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll"
       ]
     },
-    "Microsoft.EntityFrameworkCore/7.0.4": {
-      "sha512": "eNcsY3rft5ERJJcen80Jyg57EScjWZmvhwmFLYXmEOTdVqHG+wQZiMOXnO1b5RH3u2qTQq+Tpci7KGfLAG5Gtg==",
+    "Microsoft.EntityFrameworkCore/7.0.10": {
+      "sha512": "24NbXJqJ/x8u88/agqeb1pLdAF9+9StDLA36+P/3g5xsJPOaB2GxXn7epR8dWpZTgHsNZ7cvBMxBgfFmF+xZlg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/7.0.4",
+      "path": "microsoft.entityframeworkcore/7.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3303,42 +3303,42 @@
         "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.7.0.4.nupkg.sha512",
+        "microsoft.entityframeworkcore.7.0.10.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/7.0.4": {
-      "sha512": "6GbYvs4L5oFpYpMzwF05kdDgvX09UmMX7MpDtDlGI5ymijFwquwv+yvdijbtodOuu0yLUpc4n71x6eBdJ8v1xQ==",
+    "Microsoft.EntityFrameworkCore.Abstractions/7.0.10": {
+      "sha512": "Z/lDWmGLiT9uNQrp6UXTKZxofSmAKQCiKOz98FDscTbfAGgBXE3DTTqRsPMc8HFIVVSNANSiFRz3JyLg07HN9Q==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/7.0.4",
+      "path": "microsoft.entityframeworkcore.abstractions/7.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.7.0.4.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.7.0.10.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/7.0.4": {
-      "sha512": "YRD4bViuaEPEsaBIL52DzXGzLCt3jYoE3wztYEW1QZYDl89hQ+ca0nvBO2mnMHmCXpU/2wlErrUyDp4x5B/3mg==",
+    "Microsoft.EntityFrameworkCore.Analyzers/7.0.10": {
+      "sha512": "+8NVNpyJTzW6nNh/7RGfldf+mbeboVcn+X1tD8kMBCEJswuy3RqM/qecEEfOfTcWLliZExPMaHwOwtHO6RMpdA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/7.0.4",
+      "path": "microsoft.entityframeworkcore.analyzers/7.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
         "lib/netstandard2.0/_._",
-        "microsoft.entityframeworkcore.analyzers.7.0.4.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.7.0.10.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/7.0.0": {
-      "sha512": "fEEU/zZ/VblZRQxHNZxgGKVtEtOGqEAmuHkACV1i0H031bM8PQKTS7PlKPVOgg0C1v+6yeHoIAGGgbAvG9f7kw==",
+    "Microsoft.EntityFrameworkCore.Design/7.0.10": {
+      "sha512": "ZDdJ2aAE529A1zd3sEvszADRCiJmlOKxc0WlhS+NIhSs68NESAApPZL4uHXrIk0vb7SBRnNPYPfOhASWf9dahg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.design/7.0.0",
+      "path": "microsoft.entityframeworkcore.design/7.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3346,35 +3346,35 @@
         "build/net6.0/Microsoft.EntityFrameworkCore.Design.props",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.7.0.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.7.0.10.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational/7.0.2": {
-      "sha512": "TbTGOdaGtjps3GP7rLWXEXzmP+EXhV8AwPE/ov0QYhs5i5vKZX5ZpVLMnco2MeMtiPgLyxE7DhQT8s1wlu190g==",
+    "Microsoft.EntityFrameworkCore.Relational/7.0.10": {
+      "sha512": "PO2QB2Du+pW210UHmepYR12bk+ZOZJCiNkA7zEAxWs+vzvrRAMsUPlDlfgX2LXE7NBsnb0uvZp7a1/qqKf3fRQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.relational/7.0.2",
+      "path": "microsoft.entityframeworkcore.relational/7.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.xml",
-        "microsoft.entityframeworkcore.relational.7.0.2.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.7.0.10.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/7.0.0": {
-      "sha512": "+43PF5c5s8VQQl1ZKCQmkRGA/C1agHki31DgJGS0In+KI/xiUanqN3Z8v4BKTWBQYG3W9/me7Z199gOX6OKb+g==",
+    "Microsoft.EntityFrameworkCore.SqlServer/7.0.10": {
+      "sha512": "qRMzze1QbKa2vhlhjTxwjhJUMCI4qVDFWQCRq9Pdgf9mC+xLz0ZT/4ALEa0oZRicGzPZAqIIhKrHNAjgD4GsAQ==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlserver/7.0.0",
+      "path": "microsoft.entityframeworkcore.sqlserver/7.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
-        "microsoft.entityframeworkcore.sqlserver.7.0.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.7.0.10.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
@@ -8970,9 +8970,9 @@
     "net7.0": [
       "EntityFramework >= 6.4.4",
       "Microsoft.AspNetCore.OpenApi >= 7.0.5",
-      "Microsoft.EntityFrameworkCore >= 7.0.4",
-      "Microsoft.EntityFrameworkCore.Design >= 7.0.0",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.0",
+      "Microsoft.EntityFrameworkCore >= 7.0.10",
+      "Microsoft.EntityFrameworkCore.Design >= 7.0.10",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.10",
       "MySql.Data.EntityFrameworkCore >= 7.0.0",
       "Pomelo.EntityFrameworkCore.MySql >= 7.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0",
@@ -8980,24 +8980,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\etechas\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ATIVABC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\veganissimo\\Vegan.api\\Vegan.api.csproj",
+      "projectUniqueName": "C:\\Users\\ATIVABC\\Desktop\\VeganissimoApi\\Vegan.api\\Vegan.api.csproj",
       "projectName": "Vegan.api",
-      "projectPath": "A:\\veganissimo\\Vegan.api\\Vegan.api.csproj",
-      "packagesPath": "C:\\Users\\etechas\\.nuget\\packages\\",
-      "outputPath": "A:\\veganissimo\\Vegan.api\\obj\\",
+      "projectPath": "C:\\Users\\ATIVABC\\Desktop\\VeganissimoApi\\Vegan.api\\Vegan.api.csproj",
+      "packagesPath": "C:\\Users\\ATIVABC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ATIVABC\\Desktop\\VeganissimoApi\\Vegan.api\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\etechas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\ATIVABC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9005,16 +9000,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.305\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "A:\\veganissimo\\Vegan.Tests\\Vegan.Tests.csproj": {
-              "projectPath": "A:\\veganissimo\\Vegan.Tests\\Vegan.Tests.csproj"
+            "C:\\Users\\ATIVABC\\Desktop\\VeganissimoApi\\Vegan.Tests\\Vegan.Tests.csproj": {
+              "projectPath": "C:\\Users\\ATIVABC\\Desktop\\VeganissimoApi\\Vegan.Tests\\Vegan.Tests.csproj"
             }
           }
         }
@@ -9039,17 +9032,17 @@
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
-            "version": "[7.0.4, )"
+            "version": "[7.0.10, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
-            "version": "[7.0.0, )"
+            "version": "[7.0.10, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
-            "version": "[7.0.0, )"
+            "version": "[7.0.10, )"
           },
           "MySql.Data.EntityFrameworkCore": {
             "target": "Package",
@@ -9083,7 +9076,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.305\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -9092,7 +9085,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Vegan.api depends on MySql.Data.EntityFrameworkCore (>= 7.0.0) but MySql.Data.EntityFrameworkCore 7.0.0 was not found. An approximate best match of MySql.Data.EntityFrameworkCore 8.0.11 was resolved.",
+      "message": "Vegan.api depende de MySql.Data.EntityFrameworkCore (>= 7.0.0), mas MySql.Data.EntityFrameworkCore 7.0.0 não foi encontrado. A melhor correspondência aproximada de MySql.Data.EntityFrameworkCore 8.0.11 foi resolvida.",
       "libraryId": "MySql.Data.EntityFrameworkCore",
       "targetGraphs": [
         "net7.0"

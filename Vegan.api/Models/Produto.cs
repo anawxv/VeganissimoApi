@@ -15,7 +15,7 @@ namespace Vegan.api.Models
     [Table("produto")]
     public class Produto
     {
-        public ICollection<Fornecedor>? Fornecedors { get; set; }
+        public ICollection<Fornecedor> Fornecedors { get; set; }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

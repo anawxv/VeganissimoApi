@@ -9,6 +9,7 @@ namespace Vegan.api.Data
 {
     public class DataContext : DbContext
     {
+
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         { }
 
@@ -19,47 +20,19 @@ namespace Vegan.api.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
             modelBuilder.Entity<Fornecedor>()
                 .HasKey(f => f.IdFornecedor);
 
             modelBuilder.Entity<Fornecedor>()
-        .HasMany(f => f.Produtos)
-        .WithOne(p => p.Fornecedor)
-        .HasForeignKey(p => p.IdFornecedor)
-        .OnDelete(DeleteBehavior.Cascade);
+                .HasMany(f => f.Produtos)
+                .WithOne(p => p.Fornecedor)
+                .HasForeignKey(p => p.IdFornecedor)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Fornecedor>()
                 .HasMany(f => f.Restaurants)
-                .WithOne(r => r.Fornecedor)
-                .HasForeignKey(r => r.IdFornecedor)
-                .OnDelete(DeleteBehavior.Cascade);
-
-
-
-            /* modelBuilder.Entity<PratoRestaurante>()
-                 .HasKey(pr => pr.IdPrato);
-
-             modelBuilder.Entity<PratoRestaurante>()
-                 .HasOne(pr => pr.Restaurante)
-                 .WithMany(r => r.PratoRestaurantes)
-                 .HasForeignKey(pr => pr.IdRes)
-                 .OnDelete(DeleteBehavior.Cascade); */
-
-            modelBuilder.Entity<PratoRestaurante>()
-        .HasKey(pr => pr.IdPrato);
-
-            modelBuilder.Entity<PratoRestaurante>()
-                .HasOne(pr => pr.Restaurante) 
-                .WithMany(r => r.PratoRestaurantes)  
-                .HasForeignKey(pr => pr.IdRes)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            //modelBuilder.Entity<PratoRestaurante>()
-    //.Ignore(pr => pr.Restaurante);
-
-
-
+                .WithMany(r => r.Fornecedors)
+                .UsingEntity(j => j.ToTable("RestauranteFornecedor"));
 
             modelBuilder.Entity<Produto>()
                 .HasKey(p => p.IdProd);
@@ -74,10 +47,12 @@ namespace Vegan.api.Data
                 .HasKey(r => r.IdRes);
 
             modelBuilder.Entity<Restaurante>()
-                .HasOne(r => r.Fornecedor)
-                .WithMany(f => f.Restaurants)
-                .HasForeignKey(r => r.IdFornecedor)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasMany(r => r.PratoRestaurantes)
+                .WithMany(pr => pr.Restaurantes)
+                .UsingEntity(j => j.ToTable("PratosRestaurantes"));
+
+            modelBuilder.Entity<PratoRestaurante>()
+                .HasKey(pr => pr.IdPrato);
 
             base.OnModelCreating(modelBuilder);
         }
