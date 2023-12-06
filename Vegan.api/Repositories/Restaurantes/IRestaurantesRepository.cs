@@ -7,7 +7,6 @@ namespace Vegan.api.Repositories.Restaurantes
     {
         public Task<IEnumerable<Restaurante>> GetAllRestaurantesAsync();
         public Task<Restaurante> GetRestauranteByIdAsync(int id);
-        public Task<Restaurante> GetRestauranteByNomeResAsync(string nome);
         public Task AddRestauranteAsync(Restaurante restaurante);
         public Task DeleteRestaurante(Restaurante restaurante);
         public Task UpdateRestauranteAsync(Restaurante restaurante);

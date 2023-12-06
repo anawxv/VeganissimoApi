@@ -6,11 +6,9 @@ namespace Vegan.api.Repositories.PratosRestaurantes
     {
         public Task<IEnumerable<PratoRestaurante>> GetAllPratosAsync();
         public Task<PratoRestaurante> GetPratoByIdAsync(int id);
-        public Task<PratoRestaurante> GetPratoByNomePratoAsync(string nome);
         public Task AddPratoAsync(PratoRestaurante pratorestaurante);
         public Task DeletePrato(PratoRestaurante pratorestaurante);
         public Task UpdatePratoAsync(PratoRestaurante pratorestaurante);
 
-        //public Task<Fornecedor> FindUserByEmailAsync(string email);
     }
 }

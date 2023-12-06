@@ -26,8 +26,8 @@ namespace Vegan.api.Controllers
         {
             try
             {
-                IEnumerable<Fornecedor> fornecedors = await _fornecedoresService.GetAllFornecedoresAsync();
-                IEnumerable<FornecedorDTO> fornecedoresDTO = fornecedors.Select(e => e.ToFornecedor());
+                IEnumerable<Fornecedor> fornecedores = await _fornecedoresService.GetAllFornecedoresAsync();
+                IEnumerable<FornecedorDTO> fornecedoresDTO = fornecedores.Select(e => e.ToFornecedor());
                 return Ok(fornecedoresDTO);
             }
             catch (BaseException ex)

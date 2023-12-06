@@ -55,7 +55,7 @@ namespace Vegan.api.Controllers
             }
         }
 
-        [HttpGet("{nomeProduto}")]
+        /*[HttpGet("{nomeProduto}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(HttpResponseApi<ProdutoDTO>))]
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(HttpErrorResponse))]
         public async Task<IActionResult> GetProdutoByNomeProdAsync(string nomeProduto)
@@ -76,7 +76,7 @@ namespace Vegan.api.Controllers
             {
                 return ex.GetResponse();
             }
-        }
+        } */
 
 
 

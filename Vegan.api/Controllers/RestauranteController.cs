@@ -9,6 +9,7 @@ using static Vegan.api.http.HttpResponse;
 using Vegan.api.Services.PratosRestaurantes;
 using Vegan.api.Services.Produtos;
 using Vegan.api.Services.Restaurantes;
+using Microsoft.EntityFrameworkCore;
 
 namespace Vegan.api.Controllers
 {
@@ -56,7 +57,7 @@ namespace Vegan.api.Controllers
             }
         }
 
-        [HttpGet("{nomeRestaurante}")]
+        /*[HttpGet("{nomeRestaurante}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(HttpResponseApi<RestauranteDTO>))]
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(HttpErrorResponse))]
         public async Task<IActionResult> GetRestauranteByNomeResAsync(string nomeRestaurante)
@@ -77,7 +78,7 @@ namespace Vegan.api.Controllers
             {
                 return ex.GetResponse();
             }
-        }
+        } */
 
 
 
@@ -143,6 +144,9 @@ namespace Vegan.api.Controllers
 
                 return ex.GetResponse();
             }
+   
+
         }
     }
+
 }

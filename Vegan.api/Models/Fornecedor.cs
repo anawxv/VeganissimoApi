@@ -19,7 +19,7 @@ namespace Vegan.api.Models
     {
 
         public ICollection<Produto>? Produtos { get; set; }
-        public ICollection<Restaurante> Restaurants { get; set;}
+        public ICollection<Restaurante> Restaurantes { get; set;}
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -41,7 +41,7 @@ namespace Vegan.api.Models
         [NotNull]
         [Comment("Fornecedor nrdocumento")]
         public int Nrdocumento;
-        internal readonly object Restaurantes;
+        
 
         [Required]
         [Column("email")]

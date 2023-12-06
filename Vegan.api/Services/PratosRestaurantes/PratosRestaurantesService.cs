@@ -36,7 +36,7 @@ namespace Vegan.api.Services.PratosRestaurantes
 
             return pratorestaurante;
         }
-        public async Task<PratoRestaurante> GetPratoByNomePratoAsync(string nomePrato)
+       /* public async Task<PratoRestaurante> GetPratoByNomePratoAsync(string nomePrato)
         {
             PratoRestaurante pratorestaurante = await _pratosrestaurantesRepository.GetPratoByNomePratoAsync(nomePrato);
 
@@ -46,11 +46,11 @@ namespace Vegan.api.Services.PratosRestaurantes
             }
 
             return pratorestaurante;
-        }
+        } */
 
         public async Task<PratoRestaurante> AddPratoAsync(PratoRestaurante pratorestaurante)
         {
-            PratoRestaurante pratoExists = await _pratosrestaurantesRepository.GetPratoByNomePratoAsync(pratorestaurante.NomePrato);
+            PratoRestaurante pratoExists = await _pratosrestaurantesRepository.GetPratoByIdAsync(pratorestaurante.IdPrato);
             if (pratoExists != null)
             {
                 throw new Exception("Prato já existe.");

@@ -37,7 +37,7 @@ namespace Vegan.api.Controllers
             }
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("prato/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(HttpResponseApi<PratoRestauranteDTO>))]
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(HttpErrorResponse))]
         public async Task<IActionResult> GetPratoByIdAsync(int id)
@@ -45,29 +45,6 @@ namespace Vegan.api.Controllers
             try
             {
                 PratoRestaurante pratorestaurante = await _pratosrestaurantesService.GetPratoByIdAsync(id);
-                PratoRestauranteDTO pratorestauranteDto = pratorestaurante.ToPratoRestaurante();
-                return HttpResponseApi<PratoRestauranteDTO>.Ok(pratorestauranteDto);
-            }
-            catch (BaseException ex)
-            {
-                return ex.GetResponse();
-            }
-        }
-
-        [HttpGet("{nomePrato}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(HttpResponseApi<PratoRestauranteDTO>))]
-        [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(HttpErrorResponse))]
-        public async Task<IActionResult> GetPratoByNomePratoAsync(string nomePrato)
-        {
-            try
-            {
-                PratoRestaurante pratorestaurante = await _pratosrestaurantesService.GetPratoByNomePratoAsync(nomePrato);
-
-                if (pratorestaurante is null)
-                {
-                    throw new NotFoundException("Prato");
-                }
-
                 PratoRestauranteDTO pratorestauranteDto = pratorestaurante.ToPratoRestaurante();
                 return HttpResponseApi<PratoRestauranteDTO>.Ok(pratorestauranteDto);
             }

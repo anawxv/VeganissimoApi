@@ -13,22 +13,22 @@ namespace Vegan.api.Repositories.Fornecedores
         }
         public async Task<IEnumerable<Fornecedor>> GetAllFornecedoresAsync()
         {
-            return await _dataContext.Fornecedors.ToListAsync();
+            return await _dataContext.Fornecedores.ToListAsync();
         }
 
         public async Task<Fornecedor> GetFornecedorByIdAsync(int id)
         {
-            return await _dataContext.Fornecedors.FirstOrDefaultAsync(f => f.IdFornecedor == id);
+            return await _dataContext.Fornecedores.FirstOrDefaultAsync(f => f.IdFornecedor == id);
         }
 
         public async Task AddFornecedorAsync(Fornecedor fornecedor)
         {
-            await _dataContext.Fornecedors.AddAsync(fornecedor);
+            await _dataContext.Fornecedores.AddAsync(fornecedor);
         }
 
         public async Task DeleteFornecedor(Fornecedor fornecedor)
         {
-            _dataContext.Fornecedors.Remove(fornecedor);
+            _dataContext.Fornecedores.Remove(fornecedor);
         }
 
         public async Task UpdateFornecedorAsync(Fornecedor fornecedor)
@@ -38,7 +38,7 @@ namespace Vegan.api.Repositories.Fornecedores
 
         public async Task<Fornecedor> FindUserByEmailAsync(string email)
         {
-            return await _dataContext.Fornecedors.FirstOrDefaultAsync(c => c.Email == email);
+            return await _dataContext.Fornecedores.FirstOrDefaultAsync(c => c.Email == email);
         }
     }
 

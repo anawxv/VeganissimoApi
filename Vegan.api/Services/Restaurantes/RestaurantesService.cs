@@ -37,21 +37,10 @@ namespace Vegan.api.Services.Restaurantes
 
             return restaurante;
         }
-        public async Task<Restaurante> GetRestauranteByNomeResAsync(string nome)
-        {
-            Restaurante restaurante = await _restaurantesRepository.GetRestauranteByNomeResAsync(nome);
-
-            if (restaurante is null)
-            {
-                throw new NotFoundException("Produto");
-            }
-
-            return restaurante;
-        }
 
         public async Task<Restaurante> AddRestauranteAsync(Restaurante restaurante)
         {
-            Restaurante restauranteExists = await _restaurantesRepository.GetRestauranteByNomeResAsync(restaurante.NomeRes);
+            Restaurante restauranteExists = await _restaurantesRepository.GetRestauranteByIdAsync(restaurante.IdRes);
             if (restaurante != null)
             {
                 throw new Exception("O restaurante já existe.");

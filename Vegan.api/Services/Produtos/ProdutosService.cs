@@ -37,21 +37,11 @@ namespace Vegan.api.Services.Produtos
 
             return produto;
         }
-        public async Task<Produto> GetProdutoByNomeProdAsync(string nome)
-        {
-            Produto produto = await _produtosRepository.GetProdutoByNomeProdAsync(nome);
 
-            if (produto is null)
-            {
-                throw new NotFoundException("Produto");
-            }
-
-            return produto;
-        }
 
         public async Task<Produto> AddProdutoAsync(Produto produto)
         {
-            Produto produtoExists = await _produtosRepository.GetProdutoByNomeProdAsync(produto.NomeProd);
+            Produto produtoExists = await _produtosRepository.GetProdutoByIdAsync(produto.IdProd);
             if (produto != null)
             {
                 throw new Exception("Produto já existe.");
@@ -64,8 +54,8 @@ namespace Vegan.api.Services.Produtos
             await _produtosRepository.AddProdutoAsync(produto);
             await _unitOfWork.SaveChangesAsync();
             return produto;
-        }
 
+        }
         public async Task DeleteProdutoAsync(int id)
         {
             Produto produtoExists = await _produtosRepository.GetProdutoByIdAsync(id);
@@ -79,8 +69,10 @@ namespace Vegan.api.Services.Produtos
 
             await _unitOfWork.SaveChangesAsync();
         }
+
         public async Task UpdateProdutoAsync(int id, Produto produto)
-        {   Produto produtoExists = await GetProdutoByIdAsync(id);
+        {
+            Produto produtoExists = await GetProdutoByIdAsync(id);
             if (produtoExists is null)
             {
                 throw new NotFoundException("Produto");
@@ -93,3 +85,6 @@ namespace Vegan.api.Services.Produtos
         }
     }
 }
+
+
+
