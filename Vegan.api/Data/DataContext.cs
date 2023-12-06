@@ -13,7 +13,7 @@ namespace Vegan.api.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         { }
 
-        public DbSet<Fornecedor> Fornecedors { get; set;}           
+        public DbSet<Fornecedor> Fornecedores { get; set;}           
         public DbSet<Produto> Produtos { get; set;}  
         public DbSet<Restaurante> Restaurantes { get; set;}
         public DbSet<PratoRestaurante> PratoRestaurantes { get; set;}
@@ -34,6 +34,8 @@ namespace Vegan.api.Data
                 .WithMany(r => r.Fornecedors)
                 .UsingEntity(j => j.ToTable("RestauranteFornecedor"));
 
+
+
             modelBuilder.Entity<Produto>()
                 .HasKey(p => p.IdProd);
 
@@ -47,7 +49,7 @@ namespace Vegan.api.Data
                 .HasKey(r => r.IdRes);
 
             modelBuilder.Entity<Restaurante>()
-                .HasMany(r => r.PratoRestaurantes)
+                .HasMany(r => r.PratosRestaurantes)
                 .WithMany(pr => pr.Restaurantes)
                 .UsingEntity(j => j.ToTable("PratosRestaurantes"));
 

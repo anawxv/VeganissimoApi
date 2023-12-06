@@ -1,9 +1,11 @@
-using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Vegan.api.Data;
 using Vegan.api.Repositories;
 using Vegan.api.Services;
-using Vegan.api.Data;
 using Vegan.api.Repositories.Unit_of_Work;
 using Vegan.api.Services.Fornecedores;
 using Vegan.api.Repositories.Fornecedores;
@@ -13,7 +15,6 @@ using Vegan.api.Repositories.Restaurantes;
 using Vegan.api.Services.PratosRestaurantes;
 using Vegan.api.Services.Produtos;
 using Vegan.api.Services.Restaurantes;
-using Vegan.api.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,7 +27,6 @@ builder.Services.AddDbContext<DataContext>(options =>
 builder.Services.AddScoped<IFornecedoresRepository, FornecedoresRepository>();
 builder.Services.AddScoped<IFornecedoresService, FornecedoresService>();
 
-
 // Adiciona os serviços para PratosRestaurantes
 builder.Services.AddScoped<IPratosRestaurantesRepository, PratosRestaurantesRepository>();
 builder.Services.AddScoped<IPratosRestaurantesService, PratosRestaurantesService>();
@@ -38,7 +38,6 @@ builder.Services.AddScoped<IProdutosService, ProdutosService>();
 // Adiciona os serviços para Restaurantes
 builder.Services.AddScoped<IRestaurantesRepository, RestaurantesRepository>();
 builder.Services.AddScoped<IRestaurantesService, RestaurantesService>();
-
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
@@ -54,19 +53,21 @@ Newtonsoft.Json.ReferenceLoopHandling.Ignore
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configurações do Middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
+app.UseCors(builder => builder
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+);
 
-app.UseCors();
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
