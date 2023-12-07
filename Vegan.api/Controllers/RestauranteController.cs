@@ -82,7 +82,7 @@ namespace Vegan.api.Controllers
 
 
 
-        [HttpPost]
+         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(HttpResponseApi<RestauranteDTO>))]
         public async Task<IActionResult> CreateRestauranteAsync([FromBody] Restaurante restaurante)
         {
@@ -96,19 +96,19 @@ namespace Vegan.api.Controllers
             {
                 return ex.GetResponse();
             }
-        }
+        } 
 
         /* [HttpPost]
-        public async Task<IActionResult> Create(Fornecedor novoFornecedor)
+        public async Task<IActionResult> Create(Restaurante novoRestaurante)
         {
             try
             {
-                //await _fornecedorService.CreateFornecedorAsync(novoFornecedor);
+                
 
-                Fornecedor fornecedor = await _fornecedoresService.CreateFornecedorAsync(novoFornecedor);
-                FornecedorDTO fornecedorDTO = fornecedor.ToFornecedor();
+                Restaurante restaurante = await _restaurantesService.AddRestauranteAsync(novoRestaurante);
+                RestauranteDTO retauranteDTO = restaurante.ToRestaurante();
 
-                return HttpResponseApi<FornecedorDTO>.Created(fornecedorDTO);
+                return HttpResponseApi<RestauranteDTO>.Create(retauranteDTO);
             }
             catch (BaseException ex)
             {

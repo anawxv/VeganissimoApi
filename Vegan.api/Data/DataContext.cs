@@ -94,7 +94,7 @@ namespace Vegan.api.Data
             modelBuilder.Entity<Restaurante>()
                 .HasMany(r => r.PratosRestaurantes)
                 .WithMany(pr => pr.Restaurantes)
-                .UsingEntity(j => j.ToTable("PratosRestaurantes"));
+                .UsingEntity(j => j.ToTable("RestaurantePratoAssociacao"));
 
             modelBuilder.Entity<PratoRestaurante>()
                 .HasKey(pr => pr.IdPrato);

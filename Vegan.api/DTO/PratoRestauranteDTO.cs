@@ -14,7 +14,6 @@ namespace Vegan.api.DTO
         public string NomePrato { get; set; }
         public string DescricaoPrato { get; set; }
         public int PrecoPrato { get; set; }
-        public Restaurante Restaurante { get; set; }
        
     }
 }

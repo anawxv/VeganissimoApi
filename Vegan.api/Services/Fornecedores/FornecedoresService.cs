@@ -26,17 +26,43 @@ namespace Vegan.api.Services.Fornecedores
         {
             return await _fornecedoresRepository.GetAllFornecedoresAsync();
         }
+
+        /* public async Task<Fornecedor> GetFornecedorByIdAsync(int id)
+         {
+             Fornecedor fornecedor = await _fornecedoresRepository.GetFornecedorByIdAsync(id);
+
+             if (fornecedor is null)
+             {
+                 throw new NotFoundException("Fornecedor");
+             }
+
+             return fornecedor;
+         }  */
+
         public async Task<Fornecedor> GetFornecedorByIdAsync(int id)
         {
-            Fornecedor fornecedor = await _fornecedoresRepository.GetFornecedorByIdAsync(id);
-
-            if (fornecedor is null)
+            try
             {
-                throw new NotFoundException("Fornecedor");
-            }
+                Fornecedor fornecedor = await _fornecedoresRepository.GetFornecedorByIdAsync(id);
 
-            return fornecedor;
+                if (fornecedor == null)
+                {
+                    throw new NotFoundException($"Fornecedor com ID {id} não encontrado.");
+                }
+
+                return fornecedor;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao obter fornecedor por ID. Detalhes: {ex}");
+
+                throw;
+            }
         }
+
+
+
+
         public async Task<Fornecedor> CreateFornecedorAsync(Fornecedor fornecedor)
         {
             Fornecedor fornecedorExists = await _fornecedoresRepository.FindUserByEmailAsync(fornecedor.Email);

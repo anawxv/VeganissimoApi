@@ -10,6 +10,7 @@ using Vegan.api.Repositories.Fornecedores;
 using Vegan.api.Repositories.PratosRestaurantes;
 using Vegan.api.Repositories.Restaurantes;
 using Vegan.api.Repositories.Produtos;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Vegan.api.Services.Produtos
 {
@@ -17,6 +18,7 @@ namespace Vegan.api.Services.Produtos
     {
         private readonly IProdutosRepository _produtosRepository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IFornecedoresRepository _fornecedoresRepository;
         public ProdutosService(IProdutosRepository produtosRepository, IUnitOfWork unitOfWork)
         {
             _produtosRepository = produtosRepository;
@@ -39,23 +41,58 @@ namespace Vegan.api.Services.Produtos
         }
 
 
+        /* public async Task<Produto> AddProdutoAsync(Produto produto)
+         {
+             Fornecedor fornecedorExists = await _fornecedoresRepository.GetFornecedorByIdAsync(produto.IdFornecedor);
+             if (fornecedorExists == null)
+             {
+                 throw new Exception("Fornecedor não encontrado. Certifique-se de que o fornecedor existe.");
+             }
+
+             if (string.IsNullOrEmpty(produto.NomeProd))
+             {
+                 throw new Exception("O produto precisa de um nome.");
+             }
+             await _produtosRepository.AddProdutoAsync(produto);
+             await _unitOfWork.SaveChangesAsync();
+
+             return produto;
+
+         } */
+
         public async Task<Produto> AddProdutoAsync(Produto produto)
         {
-            Produto produtoExists = await _produtosRepository.GetProdutoByIdAsync(produto.IdProd);
-            if (produto != null)
+            if (produto == null)
             {
-                throw new Exception("Produto já existe.");
+                throw new ArgumentNullException(nameof(produto), "O produto não pode ser nulo.");
+            }
+
+            if (produto.IdFornecedor <= 0)
+            {
+                throw new ArgumentException("IdFornecedor do produto não pode ser menor ou igual a zero.", nameof(produto.IdFornecedor));
+            }
+
+
+            Fornecedor fornecedorExists = await _fornecedoresRepository.GetFornecedorByIdAsync(produto.IdFornecedor);
+
+            if (fornecedorExists == null)
+            {
+                throw new NotFoundException($"Fornecedor com ID {produto.IdFornecedor} não encontrado.");
             }
 
             if (string.IsNullOrEmpty(produto.NomeProd))
             {
-                throw new Exception("O produto precisa de um nome.");
+                throw new ArgumentException("O produto precisa de um nome.", nameof(produto.NomeProd));
             }
-            await _produtosRepository.AddProdutoAsync(produto);
-            await _unitOfWork.SaveChangesAsync();
-            return produto;
 
+            await _produtosRepository.AddProdutoAsync(produto);
+
+
+            await _unitOfWork.SaveChangesAsync();
+
+            return produto;
         }
+
         public async Task DeleteProdutoAsync(int id)
         {
             Produto produtoExists = await _produtosRepository.GetProdutoByIdAsync(id);

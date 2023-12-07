@@ -12,7 +12,7 @@ namespace Vegan.api.Models
 {
     //[Microsoft.EntityFrameworkCore.IndexAttribute(nameof(IdProd), IsUnique = true)]
     [PrimaryKey(nameof(IdProd))]
-    [Table("produto")]
+  
     public class Produto
     {
         [NotMapped]

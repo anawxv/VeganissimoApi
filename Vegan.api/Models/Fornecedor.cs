@@ -14,7 +14,7 @@ namespace Vegan.api.Models
 {
     //[Microsoft.EntityFrameworkCore.IndexAttribute(nameof(Email), IsUnique = true)]
     [PrimaryKey(nameof(IdFornecedor))]
-    [Table("fornecedor")]
+  
     public class Fornecedor
     {
 

@@ -13,7 +13,6 @@ namespace Vegan.api.DTO
         public string NomeProd { get; set; }
         public string DescricaoProd { get; set; }
         public int PrecoProd { get; set; }
-        public FornecedorDTO Fornecedor { get; set; }
         
     }
 }

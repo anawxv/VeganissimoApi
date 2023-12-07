@@ -82,7 +82,7 @@ namespace Vegan.api.Controllers
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(HttpResponseApi<ProdutoDTO>))]
-        public async Task<IActionResult> CreatePratoAsync([FromBody] Produto produto)
+        public async Task<IActionResult> AddProdutoAsync([FromBody] Produto produto)
         {
             try
             {

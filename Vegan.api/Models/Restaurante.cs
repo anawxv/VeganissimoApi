@@ -11,7 +11,7 @@ namespace Vegan.api.Models
 {
     //[Microsoft.EntityFrameworkCore.IndexAttribute(nameof(IdRes), IsUnique = true)]
     [PrimaryKey(nameof(IdRes))]
-    [Table("restaurante")]
+
     public class Restaurante
     {
         [NotMapped]

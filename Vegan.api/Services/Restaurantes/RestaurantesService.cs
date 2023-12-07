@@ -41,7 +41,8 @@ namespace Vegan.api.Services.Restaurantes
         public async Task<Restaurante> AddRestauranteAsync(Restaurante restaurante)
         {
             Restaurante restauranteExists = await _restaurantesRepository.GetRestauranteByIdAsync(restaurante.IdRes);
-            if (restaurante != null)
+
+            if (restauranteExists != null)
             {
                 throw new Exception("O restaurante já existe.");
             }
@@ -50,10 +51,13 @@ namespace Vegan.api.Services.Restaurantes
             {
                 throw new Exception("O restaurante precisa de um nome.");
             }
+
             await _restaurantesRepository.AddRestauranteAsync(restaurante);
             await _unitOfWork.SaveChangesAsync();
+
             return restaurante;
         }
+
 
         public async Task DeleteRestauranteAsync(int id)
         {
@@ -75,12 +79,15 @@ namespace Vegan.api.Services.Restaurantes
             {
                 throw new NotFoundException("Restaurante");
             }
+
             restauranteExists.NomeRes = restaurante.NomeRes;
             restauranteExists.DescricaoRes = restaurante.DescricaoRes;
             restauranteExists.PratosRestaurantes = restaurante.PratosRestaurantes;
-            await _restaurantesRepository.UpdateRestauranteAsync(restaurante);
+
+            await _restaurantesRepository.UpdateRestauranteAsync(restauranteExists);
             await _unitOfWork.SaveChangesAsync();
         }
+
 
     }
 }

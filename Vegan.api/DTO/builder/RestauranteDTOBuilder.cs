@@ -25,7 +25,7 @@ namespace Vegan.api.DTO.builder
         }
         public RestauranteDTOBuilder WithDescricaoRes(string descricaores)
         {
-            _restauranteDto.DescriaoRes = descricaores;
+            _restauranteDto.DescricaoRes = descricaores;
             return this;
         }
 
