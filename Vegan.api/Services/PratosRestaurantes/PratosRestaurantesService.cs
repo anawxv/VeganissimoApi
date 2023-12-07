@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Vegan.api.Models;
+﻿using Vegan.api.Models;
 using Vegan.api.Repositories.Unit_of_Work;
 using Vegan.api.Exceptions;
-using Vegan.api.Repositories;
-using Vegan.api.Repositories.Fornecedores;
 using Vegan.api.Repositories.PratosRestaurantes;
-using Vegan.api.Repositories.Restaurantes;
+
 
 namespace Vegan.api.Services.PratosRestaurantes
 {
@@ -88,7 +82,9 @@ namespace Vegan.api.Services.PratosRestaurantes
             pratorestauranteExists.NomePrato = pratorestaurante.NomePrato;
             pratorestauranteExists.DescricaoPrato = pratorestaurante.DescricaoPrato;
             pratorestauranteExists.PrecoPrato = pratorestaurante.PrecoPrato;
-            await _pratosrestaurantesRepository.UpdatePratoAsync(pratorestaurante);
+
+            // Pass the modified existing entity to the update method
+            await _pratosrestaurantesRepository.UpdatePratoAsync(pratorestauranteExists);
             await _unitOfWork.SaveChangesAsync();
         }
     }
