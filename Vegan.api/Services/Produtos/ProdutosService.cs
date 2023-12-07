@@ -114,12 +114,15 @@ namespace Vegan.api.Services.Produtos
             {
                 throw new NotFoundException("Produto");
             }
+
             produtoExists.NomeProd = produto.NomeProd;
             produtoExists.DescricaoProd = produto.DescricaoProd;
             produtoExists.PrecoProd = produto.PrecoProd;
-            await _produtosRepository.UpdateProdutoAsync(produto);
+
+            await _produtosRepository.UpdateProdutoAsync(produtoExists);
             await _unitOfWork.SaveChangesAsync();
         }
+
     }
 }
 
