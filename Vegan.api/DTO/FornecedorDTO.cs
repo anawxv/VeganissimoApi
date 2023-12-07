@@ -16,5 +16,7 @@ namespace Vegan.api.DTO
         public string Phone { get; set; }
         public List<Produto> Produtos { get; set; } = new List<Produto>();
         public List<Restaurante> Restaurantes { get; set; } = new List<Restaurante>();
+       // public List<int> ProdutoIds { get; set; } = new List<int>();
+       // public List<int> RestauranteIds { get; set; } = new List<int>();
     }
 }

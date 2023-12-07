@@ -12,7 +12,7 @@ using Vegan.api.Data;
 namespace Vegan.api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20231206161917_Primeira")]
+    [Migration("20231207002915_Primeira")]
     partial class Primeira
     {
         /// <inheritdoc />
@@ -27,13 +27,13 @@ namespace Vegan.api.Migrations
 
             modelBuilder.Entity("FornecedorRestaurante", b =>
                 {
-                    b.Property<int>("FornecedorsIdFornecedor")
+                    b.Property<int>("FornecedoresIdFornecedor")
                         .HasColumnType("int");
 
                     b.Property<int>("RestaurantesIdRes")
                         .HasColumnType("int");
 
-                    b.HasKey("FornecedorsIdFornecedor", "RestaurantesIdRes");
+                    b.HasKey("FornecedoresIdFornecedor", "RestaurantesIdRes");
 
                     b.HasIndex("RestaurantesIdRes");
 
@@ -138,7 +138,7 @@ namespace Vegan.api.Migrations
 
                     b.HasKey("IdPrato");
 
-                    b.ToTable("pratorestaurante");
+                    b.ToTable("PratoRestaurantes");
 
                     b.HasData(
                         new
@@ -243,7 +243,7 @@ namespace Vegan.api.Migrations
                 {
                     b.HasOne("Vegan.api.Models.Fornecedor", null)
                         .WithMany()
-                        .HasForeignKey("FornecedorsIdFornecedor")
+                        .HasForeignKey("FornecedoresIdFornecedor")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -272,7 +272,7 @@ namespace Vegan.api.Migrations
             modelBuilder.Entity("Vegan.api.Models.Fornecedor", b =>
                 {
                     b.HasOne("Vegan.api.Models.Produto", null)
-                        .WithMany("Fornecedors")
+                        .WithMany("Fornecedores")
                         .HasForeignKey("ProdutoIdProd");
                 });
 
@@ -294,7 +294,7 @@ namespace Vegan.api.Migrations
 
             modelBuilder.Entity("Vegan.api.Models.Produto", b =>
                 {
-                    b.Navigation("Fornecedors");
+                    b.Navigation("Fornecedores");
                 });
 #pragma warning restore 612, 618
         }

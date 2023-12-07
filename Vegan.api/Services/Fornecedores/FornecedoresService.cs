@@ -64,6 +64,7 @@ namespace Vegan.api.Services.Fornecedores
 
             await _unitOfWork.SaveChangesAsync();
         }
+
         public async Task UpdateFornecedorAsync(int id, Fornecedor fornecedor)
         {
             Fornecedor fornecedorExists = await GetFornecedorByIdAsync(id);

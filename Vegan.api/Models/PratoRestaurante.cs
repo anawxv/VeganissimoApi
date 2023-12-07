@@ -13,10 +13,9 @@ namespace Vegan.api.Models
 
     //[Microsoft.EntityFrameworkCore.IndexAttribute(nameof(IdPrato), IsUnique = true)]
     [PrimaryKey(nameof(IdPrato))]
-    [Table("pratorestaurante")]
     public class PratoRestaurante
     {
-        public ICollection<Restaurante> Restaurantes { get; set; }
+        public ICollection<Restaurante>? Restaurantes { get; set; }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -27,7 +26,7 @@ namespace Vegan.api.Models
         [ForeignKey("IdRes")]
         public int IdRes { get; set; }
         [NotMapped]
-        public Restaurante Restaurante { get; set; }
+        public Restaurante? Restaurante { get; set; }
 
         [Required]
         [StringLength(60)]

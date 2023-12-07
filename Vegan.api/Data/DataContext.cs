@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Vegan.api.Models;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using Pomelo.EntityFrameworkCore.MySql.Storage;
+
 
 
 namespace Vegan.api.Data
@@ -75,7 +74,7 @@ namespace Vegan.api.Data
 
             modelBuilder.Entity<Fornecedor>()
                 .HasMany(f => f.Restaurantes)
-                .WithMany(r => r.Fornecedors)
+                .WithMany(r => r.Fornecedores)
                 .UsingEntity(j => j.ToTable("RestauranteFornecedor"));
 
 

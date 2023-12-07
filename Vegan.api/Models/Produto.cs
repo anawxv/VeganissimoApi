@@ -15,7 +15,8 @@ namespace Vegan.api.Models
     [Table("produto")]
     public class Produto
     {
-        public ICollection<Fornecedor> Fornecedors { get; set; }
+        [NotMapped]
+        public ICollection<Fornecedor>? Fornecedores { get; set; }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -25,8 +26,8 @@ namespace Vegan.api.Models
 
         [ForeignKey("IdFornecedor")]
         public int IdFornecedor { get; set; }
-        
-        public Fornecedor Fornecedor { get; set; }
+        [NotMapped]
+        public Fornecedor? Fornecedor { get; set; }
 
         [Required]
         [StringLength(60)]

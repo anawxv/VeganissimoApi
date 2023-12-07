@@ -11,7 +11,7 @@ namespace Vegan.api.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "pratorestaurante",
+                name: "PratoRestaurantes",
                 columns: table => new
                 {
                     idprato = table.Column<int>(type: "int", nullable: false, comment: "Prato IDPrato as a primary key")
@@ -23,7 +23,7 @@ namespace Vegan.api.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_pratorestaurante", x => x.idprato);
+                    table.PrimaryKey("PK_PratoRestaurantes", x => x.idprato);
                 });
 
             migrationBuilder.CreateTable(
@@ -52,9 +52,9 @@ namespace Vegan.api.Migrations
                 {
                     table.PrimaryKey("PK_PratosRestaurantes", x => new { x.PratosRestaurantesIdPrato, x.RestaurantesIdRes });
                     table.ForeignKey(
-                        name: "FK_PratosRestaurantes_pratorestaurante_PratosRestaurantesIdPrato",
+                        name: "FK_PratosRestaurantes_PratoRestaurantes_PratosRestaurantesIdPrato",
                         column: x => x.PratosRestaurantesIdPrato,
-                        principalTable: "pratorestaurante",
+                        principalTable: "PratoRestaurantes",
                         principalColumn: "idprato",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -107,15 +107,15 @@ namespace Vegan.api.Migrations
                 name: "RestauranteFornecedor",
                 columns: table => new
                 {
-                    FornecedorsIdFornecedor = table.Column<int>(type: "int", nullable: false),
+                    FornecedoresIdFornecedor = table.Column<int>(type: "int", nullable: false),
                     RestaurantesIdRes = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RestauranteFornecedor", x => new { x.FornecedorsIdFornecedor, x.RestaurantesIdRes });
+                    table.PrimaryKey("PK_RestauranteFornecedor", x => new { x.FornecedoresIdFornecedor, x.RestaurantesIdRes });
                     table.ForeignKey(
-                        name: "FK_RestauranteFornecedor_fornecedor_FornecedorsIdFornecedor",
-                        column: x => x.FornecedorsIdFornecedor,
+                        name: "FK_RestauranteFornecedor_fornecedor_FornecedoresIdFornecedor",
+                        column: x => x.FornecedoresIdFornecedor,
                         principalTable: "fornecedor",
                         principalColumn: "idfornecedor",
                         onDelete: ReferentialAction.Cascade);
@@ -128,14 +128,14 @@ namespace Vegan.api.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "PratoRestaurantes",
+                columns: new[] { "idprato", "descricaoprato", "IdRes", "nomeprato", "PrecoPrato" },
+                values: new object[] { 1, "Lasanha vegana de aabobrinha, cogumelos e espinafre", 1, "Lasanha de abobrinha vegana", 32 });
+
+            migrationBuilder.InsertData(
                 table: "fornecedor",
                 columns: new[] { "idfornecedor", "email", "nome", "phone", "ProdutoIdProd" },
                 values: new object[] { 1, "jaojoao@gmail.com", "Jão João", "40028922", null });
-
-            migrationBuilder.InsertData(
-                table: "pratorestaurante",
-                columns: new[] { "idprato", "descricaoprato", "IdRes", "nomeprato", "PrecoPrato" },
-                values: new object[] { 1, "Lasanha vegana de aabobrinha, cogumelos e espinafre", 1, "Lasanha de abobrinha vegana", 32 });
 
             migrationBuilder.InsertData(
                 table: "restaurante",
@@ -189,7 +189,7 @@ namespace Vegan.api.Migrations
                 name: "RestauranteFornecedor");
 
             migrationBuilder.DropTable(
-                name: "pratorestaurante");
+                name: "PratoRestaurantes");
 
             migrationBuilder.DropTable(
                 name: "restaurante");

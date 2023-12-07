@@ -37,7 +37,7 @@ namespace Vegan.api.Controllers
             }
         }
 
-        [HttpGet("prato/{id}")]
+        [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(HttpResponseApi<PratoRestauranteDTO>))]
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(HttpErrorResponse))]
         public async Task<IActionResult> GetPratoByIdAsync(int id)
@@ -72,16 +72,16 @@ namespace Vegan.api.Controllers
         }
 
         /* [HttpPost]
-        public async Task<IActionResult> Create(Fornecedor novoFornecedor)
+        public async Task<IActionResult> AddPratoAsync(PratoRestaurante novoPrato)
         {
             try
             {
-                //await _fornecedorService.CreateFornecedorAsync(novoFornecedor);
+                await _pratosrestaurantesService.AddPratoAsync(novoPrato);
 
-                Fornecedor fornecedor = await _fornecedoresService.CreateFornecedorAsync(novoFornecedor);
-                FornecedorDTO fornecedorDTO = fornecedor.ToFornecedor();
+               PratoRestaurante pratoRestaurante = await _pratosrestaurantesService.AddPratoAsync(novoPrato);
+                PratoRestauranteDTO pratoRestauranteDTO = novoPrato.ToPratoRestaurante();
 
-                return HttpResponseApi<FornecedorDTO>.Created(fornecedorDTO);
+                return HttpResponseApi<PratoRestauranteDTO>.AddPratoAsync(pratoRestauranteDTO);
             }
             catch (BaseException ex)
             {
@@ -105,7 +105,7 @@ namespace Vegan.api.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdatePratoAsync(int id, [FromBody] PratoRestaurante pratorestaurante)
+        public async Task<IActionResult> UpdatePratoAsync(int id, PratoRestaurante pratorestaurante)
         {
             try
             {
