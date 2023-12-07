@@ -33,7 +33,9 @@ namespace Vegan.api.Repositories.PratosRestaurantes
 
         public async Task UpdatePratoAsync(PratoRestaurante pratorestaurante)
         {
-            _dataContext.Update(pratorestaurante);
+            //_dataContext.Update(pratorestaurante);
+            _dataContext.PratoRestaurantes.Update(pratorestaurante);
+            await _dataContext.SaveChangesAsync();
         }
 
        /* public async Task<PratoRestaurante> FindUserByEmailAsync(string email)

@@ -19,7 +19,7 @@ namespace Vegan.api.Models
     {
 
         public ICollection<Produto>? Produtos { get; set; }
-        public ICollection<Restaurante> Restaurantes { get; set;}
+        public ICollection<Restaurante>? Restaurantes { get; set;}
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

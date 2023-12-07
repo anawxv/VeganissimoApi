@@ -35,11 +35,13 @@ namespace Vegan.api.Controllers
 
                 return ex.GetResponse();
             }
+
         }
 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(HttpResponseApi<FornecedorDTO>))]
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(HttpErrorResponse))]
+
         public async Task<IActionResult> GetByIdAsync(int id)
         {
             try
@@ -53,6 +55,8 @@ namespace Vegan.api.Controllers
                 return ex.GetResponse();
             }
         }
+
+
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(HttpResponseApi<FornecedorDTO>))]
         public async Task<IActionResult> CreateFornecedorAsync([FromBody] Fornecedor fornecedor)
@@ -118,4 +122,5 @@ namespace Vegan.api.Controllers
         }
     }
 }
+
 

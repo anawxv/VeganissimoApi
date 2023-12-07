@@ -14,8 +14,10 @@ namespace Vegan.api.Models
     [Table("restaurante")]
     public class Restaurante
     {
-        public ICollection<Fornecedor> Fornecedors { get; set; }
-        public ICollection<PratoRestaurante> PratosRestaurantes { get; set; }
+        [NotMapped]
+        public ICollection<Fornecedor>? Fornecedores { get; set; }
+        [NotMapped]
+        public ICollection<PratoRestaurante>? PratosRestaurantes { get; set; }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -27,7 +29,7 @@ namespace Vegan.api.Models
         [ForeignKey("IdFornecedor")]
         public int IdFornecedor { get; set; }
         [NotMapped]
-        public Fornecedor Fornecedor { get; set; }
+        public Fornecedor? Fornecedor { get; set; }
 
         [Required]
         [StringLength(60)]
@@ -39,6 +41,7 @@ namespace Vegan.api.Models
         [Column("descricaores")]
         [NotNull]
         [Comment("Descricao do restaurante")]
+        [NotMapped]
         public string DescricaoRes { get; set; } = null!;
         
 

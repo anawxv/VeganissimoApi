@@ -89,7 +89,9 @@ namespace Vegan.api.Services.PratosRestaurantes
             pratorestauranteExists.DescricaoPrato = pratorestaurante.DescricaoPrato;
             pratorestauranteExists.PrecoPrato = pratorestaurante.PrecoPrato;
             await _pratosrestaurantesRepository.UpdatePratoAsync(pratorestaurante);
-            await _unitOfWork.SaveChangesAsync();
+
+
+            //await _unitOfWork.SaveChangesAsync();
         }
     }
 }
