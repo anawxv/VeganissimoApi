@@ -20,10 +20,15 @@ namespace Vegan.api.Repositories.Produtos
         {
             return await _dataContext.Produtos.FirstOrDefaultAsync(d => d.IdProd == id);
         }
+        public async Task<Produto> GetProdutoByNomeProdAsync(string nomeProduto)
+        {
+            return await _dataContext.Produtos.FirstOrDefaultAsync(p => p.NomeProd == nomeProduto);
+        }
 
         public async Task AddProdutoAsync(Produto produto)
         {
             await _dataContext.Produtos.AddAsync(produto);
+            await _dataContext.SaveChangesAsync();
         }
 
         public async Task DeleteProduto(Produto produto)
@@ -36,4 +41,6 @@ namespace Vegan.api.Repositories.Produtos
             _dataContext.Update(produto);
         }
     }
+    
+
 }

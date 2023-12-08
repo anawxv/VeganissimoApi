@@ -29,6 +29,8 @@ builder.Services.AddScoped<IPratosRestaurantesService, PratosRestaurantesService
 builder.Services.AddScoped<IProdutosRepository, ProdutosRepository>();
 builder.Services.AddScoped<IProdutosService, ProdutosService>();
 
+
+
 // Adiciona os serviços para Restaurantes
 builder.Services.AddScoped<IRestaurantesRepository, RestaurantesRepository>();
 builder.Services.AddScoped<IRestaurantesService, RestaurantesService>();
@@ -54,11 +56,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
+
 app.UseCors(builder => builder
     .AllowAnyOrigin()
     .AllowAnyMethod()
     .AllowAnyHeader()
 );
+
 
 app.UseHttpsRedirection();
 app.UseAuthorization();

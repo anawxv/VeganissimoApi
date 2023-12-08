@@ -10,5 +10,6 @@ namespace Vegan.api.Repositories.Produtos
         public Task AddProdutoAsync(Produto produto);
         public Task DeleteProduto(Produto produto);
         public Task UpdateProdutoAsync(Produto produto);
+        public Task<Produto> GetProdutoByNomeProdAsync(string nomeProduto);
     }
 }
