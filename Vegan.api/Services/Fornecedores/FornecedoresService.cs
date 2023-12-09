@@ -98,12 +98,16 @@ namespace Vegan.api.Services.Fornecedores
             {
                 throw new NotFoundException("Fornecedor");
             }
+
             fornecedorExists.Email = fornecedor.Email;
             fornecedorExists.Nome = fornecedor.Nome;
             fornecedorExists.Phone = fornecedor.Phone;
-            await _fornecedoresRepository.UpdateFornecedorAsync(fornecedor);
+
+            // Passa a entidade existente modificada para o método de atualização
+            await _fornecedoresRepository.UpdateFornecedorAsync(fornecedorExists);
             await _unitOfWork.SaveChangesAsync();
         }
+
 
     }
 }
